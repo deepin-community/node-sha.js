@@ -1,0 +1,27 @@
+node-sha.js (2.4.11-2) unstable; urgency=medium
+
+  * Bug fix: "FTBFS and autopkgtest failure on 32-bit", thanks to Graham
+    Inggs (Closes: #899334).
+
+ -- Bastien Roucariès <rouca@debian.org>  Fri, 01 Jun 2018 15:15:51 +0200
+
+node-sha.js (2.4.11-1) unstable; urgency=medium
+
+  * New upstream version
+  * Bump policy and compat (no changes)
+  * Move to salsa
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 07 May 2018 23:27:41 +0200
+
+node-sha.js (2.4.9-1) unstable; urgency=medium
+
+  * New upstream version
+  * Move to section javascript
+
+ -- Bastien Roucariès <rouca@debian.org>  Thu, 30 Nov 2017 11:46:34 +0100
+
+node-sha.js (2.4.8-1) unstable; urgency=low
+
+  * Initial release (Closes: #858830)
+
+ -- Bastien Roucariès <rouca@debian.org>  Thu, 20 Apr 2017 22:03:54 +0200

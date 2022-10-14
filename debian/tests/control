@@ -1,0 +1,6 @@
+Tests: require
+Depends: node-sha.js, nodejs (>= 6)
+
+Tests: runtestsuite
+Depends: node-sha.js, nodejs (>=6), node-tape (>= 3.0.1), node-hash-test-vectors, node-tap (>= 10)
+Restrictions: allow-stderr

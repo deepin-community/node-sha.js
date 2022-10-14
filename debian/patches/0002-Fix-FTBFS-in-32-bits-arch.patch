@@ -1,0 +1,44 @@
+From c12963fc8bbe4f81d7e4337ff29d9ffbc9aededa Mon Sep 17 00:00:00 2001
+From: Graham Inggs <ginggs@debian.org>
+Date: Fri, 1 Jun 2018 15:13:38 +0200
+Subject: Fix FTBFS in 32 bits arch
+
+RangeError: "size" argument must not be larger than 1073741823
+This test worked previously in version 2.4.9.
+
+Since the upload of 2.4.11-1 to unstable, node-sha.js FTBFS
+and fails its autopkgtests on 32-bit architectures [1][2] with the
+following error:
+
+RangeError: "size" argument must not be larger than 1073741823
+    at Function.Buffer.alloc (buffer.js:233:3)
+    at Test.<anonymous> (/build/1st/node-sha.js-2.4.11/test/test.js:90:24)
+    at Test.bound [as _cb] (/usr/lib/nodejs/tape/lib/test.js:76:32)
+    at Test.run (/usr/lib/nodejs/tape/lib/test.js:95:10)
+    at Test.bound [as run] (/usr/lib/nodejs/tape/lib/test.js:76:32)
+    at Immediate.next [as _onImmediate]
+(/usr/lib/nodejs/tape/lib/results.js:71:15)
+    at runCallback (timers.js:794:20)
+    at tryOnImmediate (timers.js:752:5)
+    at processImmediate [as _immediateCallback] (timers.js:729:5)
+
+bug: https://github.com/crypto-browserify/sha.js/pull/56
+forwarded: https://github.com/crypto-browserify/sha.js/pull/56
+bug-debian: https://bugs.debian.org/899334
+---
+ test/test.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/test.js b/test/test.js
+index dac8580..e8545f4 100644
+--- a/test/test.js
++++ b/test/test.js
+@@ -87,7 +87,7 @@ tape('hex encoding', function (t) {
+ tape('call digest for more than MAX_UINT32 bits of data', function (t) {
+   var _hash = crypto.createHash('sha1')
+   var hash = new Sha1()
+-  var bigData = Buffer.alloc(0x1ffffffff / 8)
++  var bigData = Buffer.alloc(0x1fffffff8 / 8)
+ 
+   hash.update(bigData)
+   _hash.update(bigData)
