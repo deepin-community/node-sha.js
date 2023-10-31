@@ -1,0 +1,1 @@
+tape -t 30000 test/*.js

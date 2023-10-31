@@ -2,6 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: sha.js
 Upstream-Contact: https://github.com/crypto-browserify/sha.js/issues
 Source: https://github.com/crypto-browserify/sha.js
+ https://registry.npmjs.org/@types/sha.js
 
 Files: *
 Copyright: 2013-2018 Dominic Tarr <dominic.tarr@gmail.com> (dominictarr.com)
@@ -17,6 +18,10 @@ Files: debian/*
 Copyright: 2017 Bastien Roucariès <rouca@debian.org>
 License: Expat
 
+Files: types-*/*
+Copyright: Microsoft Corporation
+License: Expat
+
 License: BSD-3
  All rights reserved.
  .
@@ -24,7 +29,7 @@ License: BSD-3
  are permitted provided that the following conditions are met:
  .
  Redistributions of source code must retain the above copyright notice,
- this list of conditions and the following disclaimer. 
+ this list of conditions and the following disclaimer.
  Redistributions in binary form must reproduce the above copyright notice,
  this list of conditions and the following disclaimer in the documentation
  and/or other materials provided with the distribution.
@@ -43,7 +48,6 @@ License: BSD-3
  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
  OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 License: Expat
  Permission is hereby granted, free of charge, to any person
@@ -65,4 +69,3 @@ License: Expat
  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-

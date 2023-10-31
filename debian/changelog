@@ -1,3 +1,40 @@
+node-sha.js (2.4.11+~2.4.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + node-sha.js: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 21 Nov 2022 11:16:07 +0000
+
+node-sha.js (2.4.11+~2.4.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Remove constraints unnecessary since stretch:
+    + Build-Depends: Drop versioned constraint on node-inherits and nodejs.
+    + node-sha.js: Drop versioned constraint on node-inherits and nodejs in
+      Depends.
+  * Bump debhelper from old 12 to 13.
+
+  [ Yadd ]
+  * Update standards version to 4.1.5, no changes needed.
+  * Declare compliance with policy 4.6.0
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Modernize debian/watch
+    * Fix filenamemangle
+    * Fix GitHub tags regex
+  * Update nodejs dependency to nodejs:any
+  * Use dh-sequence-nodejs auto test & install
+  * Embed typescript declarations and repack
+  * New upstream version 2.4.11+~2.4.0
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Dec 2021 11:16:03 +0100
+
 node-sha.js (2.4.11-2) unstable; urgency=medium
 
   * Bug fix: "FTBFS and autopkgtest failure on 32-bit", thanks to Graham
