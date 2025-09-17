@@ -1,10 +1,11 @@
-version=4
-opts=\
-dversionmangle=auto,\
-filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-sha.js-$1/ \
- https://github.com/crypto-browserify/sha.js/tags .*/archive/.*/v?([\d\.]+).tar.gz group
+Version: 5
+Version-Schema: group
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,component=types-sha-js,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-sha-js-$1/" \
- https://registry.npmjs.org/@types/sha.js https://registry.npmjs.org/@types/sha.js/-/sha.js-([\d\.]+)@ARCHIVE_EXT@ group
+Template: Github
+Owner: crypto-browserify
+Project: sha.js
+
+Component: types-sha-js
+Ctype: nodejs
+Template: Npmregistry
+Dist: @types/sha

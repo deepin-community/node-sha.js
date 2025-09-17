@@ -1,31 +1,23 @@
-From 63eb440ebefbccc4ebaad85a0184165470726d24 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Bastien=20ROUCARI=C3=88S?= <roucaries.bastien@gmail.com>
-Date: Thu, 20 Apr 2017 13:36:19 +0200
-Subject: Fix testsuite
-
+Description: Fix testsuite
+Author: Bastien ROUCARIÈS <roucaries.bastien@gmail.com>
 Forwarded: no
----
- test/vectors.js | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Last-Update: 2025-09-14
 
-diff --git a/test/vectors.js b/test/vectors.js
-index 48a646e..b0e185b 100644
 --- a/test/vectors.js
 +++ b/test/vectors.js
-@@ -9,6 +9,16 @@ function makeTest (alg, i, verbose) {
-   var v = vectors[i]
+@@ -11,6 +11,15 @@
+ 	var v = vectors[i];
  
-   tape(alg + ': NIST vector ' + i, function (t) {
-+    // nan test
-+    if(v!=v) {
-+	t.end();
-+	return;
-+	}
-+    if(typeof(v)=='undefined') {
-+	t.end();
-+	return;
-+    }
-+    vinput = v != v ? v : (typeof(v) == 'undefined' ? v : v.input);
-     if (verbose) {
-       console.log(v)
-       console.log('VECTOR', i)
+ 	tape(alg + ': NIST vector ' + i, function (t) {
++		// nan test
++		if(v!=v) {
++			t.end();
++			return;
++		}
++		if(typeof(v)=='undefined') {
++			t.end();
++			return;
++		}
+ 		if (verbose) {
+ 			t.comment(v);
+ 			t.comment('VECTOR', i);
